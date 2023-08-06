@@ -1,0 +1,354 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: var(--very-light-gray);
+}
+
+:root {
+  /* Primary Colors*/
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)) ;
+
+  /* Neutral */
+  /* Light Theme */
+  
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue: hsl(233, 11%, 84%);
+  --dark-grayish-blue: hsl(236, 9%, 61%);
+  --very-dark-grayish-blue: hsl(235, 19%, 35%);
+  
+  /* Dark Theme */
+  
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --light-grayish-blue: hsl(234, 39%, 85%);
+  --light-grayish-blue-hover: hsl(236, 33%, 92%); /* hover*/
+  --grayish-blue: hsl(234, 11%, 52%);
+  --very-dark-grayish-blue: hsl(233, 14%, 35%);
+  --very-dark-grayish-blue: hsl(237, 14%, 26%);
+  
+
+}
+
+h5 {
+  color: var(--gradient-color-start);
+}
+
+a, li, ul {
+  text-decoration: none;
+  list-style: none;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 40% 60%;
+  
+}
+
+.container-dark {
+  background-color: var(--very-dark-blue);
+}
+
+main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 70px 0;
+}
+
+.up-dark-mode {
+  background-image: url('assets/images/bg-desktop-dark.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.up-light-mode {
+  background-image: url('assets/images/bg-desktop-light.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+ 
+}
+
+.todo {
+  display: grid;
+  grid-template-rows: 50px 60px auto 30px;
+  width: 473px;
+  max-width: 100%;
+  gap: 18px;
+}
+
+.todo .logo {
+  display: flex;
+  justify-content: space-between;
+  color: var(--very-light-gray);
+}
+
+.todo .logo h1{
+  letter-spacing: 15px;
+  font-size: 37px;
+  
+}
+
+.logo-dark {
+  color: var(--light-grayish-blue)
+}
+
+.todo .input {
+  position: relative;
+}
+
+.todo .input input{
+  width: 100%;
+  height: 53px;
+  border-radius: 4px;
+  font-family: 'Josefin-Sans';
+  border: none;
+  padding: 0 15px;
+  padding-left: 66px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--very-dark-blue);
+}
+
+.input-dark {
+  background-color: var(--very-dark-desaturated-blue) !important;
+  color: var(--light-grayish-blue) !important;
+  border: 1px solid var(--very-dark-grayish-blue) !important;
+}
+
+
+.todo .input input:focus {
+  border: none;
+  outline: none;
+}
+
+.todo .input  .circle-icon {
+  position: absolute;
+  left: 23px; 
+  top: 45%;
+  transform: translateY(-50%);
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+}
+
+.todo .input span {
+  height: 20px;
+  width: 20px;
+  background-color: var(--check-background);
+  border-radius: 12px;
+  border: 1px solid var(--light-grayish-blue);
+  position: absolute;
+}
+
+.todo-list {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 5px 8px var(--very-light-grayish-blue);
+}
+
+.todolist-dark {
+  background-color: var(--very-dark-desaturated-blue) !important;
+  color: var(--dark-grayish-blue);
+  box-shadow: 0px 2px 5px var(--very-dark-grayish-blue);
+}
+
+.todolist-dark-li {
+  border-bottom: 1px solid var(--very-dark-grayish-blue) !important;
+  
+}
+
+
+
+.todo-list ul{
+  border-radius: 30px;
+}
+
+.todo-list ul li{
+  width: 100%;
+  height: 42px;
+  border-bottom: 1px solid var(--very-light-grayish-blue);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  color: var(--dark-grayish-blue);
+  cursor: pointer;
+}
+
+.dark-task {
+  color: var(--light-grayish-blue);
+}
+
+.task-done {
+  color: var(--dark-grayish-blue) !important;
+  text-decoration: line-through;
+}
+
+.todo-list ul li .checkbox {
+  width: 23px;
+  height: 23px;
+  border-radius: 12px;
+  padding: 5px;
+  display: flex;
+  border: 1px solid var(--light-grayish-blue);
+}
+
+.todo-list ul li .checkbox:hover {
+  border-color: var(--bright-blue) !important;
+}
+
+.dark-checkbox {
+  border: 1px solid var(--very-dark-grayish-blue) !important;
+}
+
+.checked {
+  background-color: var(--bright-blue);
+  background-image: var(--check-background);
+}
+
+.todo-list ul li .checkbox img {
+  height: 100%;
+}
+
+.todo-list ul li p {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 700;
+  
+}
+
+.todo-list ul li .delete {
+  display: none;
+}
+.todo-list ul li:hover .delete{
+  display: block;
+}
+
+
+.todo-list ul .footer-list {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: unset;
+}
+
+.todo-list ul .footer-list nav {
+  display: flex;
+  gap: 10px; 
+}
+
+.list-nav {
+  width: 100%;
+  background-color: var(--very-dark-desaturated-blue);
+  padding: 23px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  box-shadow: 0px 2px 5px var(--very-dark-grayish-blue);
+}
+
+.list-nav-light {
+  box-shadow: 0px 5px 8px var(--very-light-grayish-blue);
+  background-color: #fff;
+  
+}
+.list-nav-light a {
+  color: var(--dark-grayish-blue);
+}
+
+
+.list-nav nav {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.todo-list ul .footer-list p, .todo-list ul .footer-list a {
+  font-size: 12px;
+  color: var(--dark-grayish-blue);
+  cursor: pointer;
+  font-weight: 500;
+  
+}
+
+.todo-list ul .footer-list a:hover, .todo-list ul .footer-list p:hover {
+  color: var(--very-dark-grayish-blue);
+}
+
+
+.footer-list-dark {
+  color: var(--grayish-blue) !important;
+}
+
+.footer-list-dark:hover {
+color: var(--light-grayish-blue-hover) !important;
+}
+
+.active {
+  color: var(--bright-blue) !important;
+}
+
+.drop-text {
+  padding-top: 40px;
+  text-align: center;
+  display: none;
+}
+
+.drop-text p { 
+  font-size: 13px;
+  color: var(--dark-grayish-blue);
+}
+
+
+.attribution {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  
+}
+
+.attribution p, .attribution a {
+  font-size: 10px;
+  color: var(--dark-grayish-blue);
+}
+
+
+
+@media (max-width: 568px) {
+  .todo .logo h1{
+    letter-spacing: 12px;
+    font-size: 28px; 
+  }
+  
+  .todo {
+    margin: 0 32px;
+  }
+
+  .todo-list ul .footer-list nav {
+    display: none;
+  }
+
+  .list-nav {
+    display: flex;
+  }
+
+  .drop-text {
+    padding-top: 35px;
+  }
+}
