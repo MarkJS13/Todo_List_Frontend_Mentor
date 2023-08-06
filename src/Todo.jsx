@@ -1,6 +1,6 @@
 import check from './assets/images/icon-check.svg';
 import deleteIcon from './assets/images/icon-cross.svg'
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route, NavLink, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Active from './nav/Active';
 import Completed  from './nav/Completed';
@@ -13,14 +13,19 @@ import Footer from './Footer';
 const Todo = (props) => {
 const [todoList, setTodolist] = useState([]);
 const [newTask, setNewTask] = useState('');
-
+const navigate = useNavigate();
 
 useEffect(() => {
     const storedTodos = localStorage.getItem('todos');
-    if(storedTodos) {
-        setTodolist(JSON.parse(storedTodos));
+    if (storedTodos) {
+      setTodolist(JSON.parse(storedTodos));
     }
-}, [])
+
+    const currentRoute = window.location.pathname;
+    if (currentRoute !== '/active' && currentRoute !== '/completed') {
+      navigate('/');
+    }
+  }, [navigate]);
 
 
 const submitInput = (event) => {
@@ -88,9 +93,9 @@ return (
                 </ul>
             </div>
 
-             <li className={`list-nav ${props.isDark ? 'list-nav-light' : ''}`}> 
+            <li className={`list-nav ${props.isDark ? 'list-nav-light' : ''}`}> 
                 <nav>
-                    <NavLink to="/" className={!props.isDark ? 'footer-list-dark' : ''} exact> All </NavLink>
+                    <NavLink to="/" className={!props.isDark ? 'footer-list-dark' : ''} > All </NavLink>
                     <NavLink to="/active" className={!props.isDark ? 'footer-list-dark' : ''}> Active </NavLink>
                     <NavLink to="/completed" className={!props.isDark ? 'footer-list-dark' : ''}> Completed </NavLink>
                 </nav>
