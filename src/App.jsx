@@ -16,7 +16,7 @@ function App() {
       
       <Todo toggle={toggleTheme} isDark={theme}/>
 
-      <div class="attribution">
+      <div className="attribution">
         <p> Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
           Coded by <a href="https://github.com/MarkJS13" target='_blank'>Mark Joseph Serrano</a>.
         </p>
